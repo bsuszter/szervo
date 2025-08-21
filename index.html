@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Szervó szimulátor – A/B gombokkal</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <h1>Szervó szimulátor</h1>
+
+    <div class="panel">
+        <!-- Szervó grafika -->
+        <div class="servo">
+            <div class="hub"></div>
+            <div class="arm" id="servoArm"></div>
+            <div class="scale">
+                <span>0°</span><span>90°</span><span>180°</span>
+            </div>
+        </div>
+
+        <!-- Vezérlők (A/B gombok) -->
+        <div class="controls">
+            <div class="buttons">
+                <button class="btn btn-a" id="btnA" aria-label="Gomb A (balra)"><span>A</span></button>
+                <button class="btn btn-b" id="btnB" aria-label="Gomb B (jobbra)"><span>B</span></button>
+            </div>
+
+            <div class="info">
+                <div>Szög: <strong id="angleValue">90°</strong></div>
+                <div class="step">
+                    Lépésköz:
+                    <input type="range" id="stepSlider" min="1" max="30" value="10" />
+                    <span id="stepValue">10°</span>
+                </div>
+                <div class="extras">
+                    <button id="centerBtn">Közép (90°)</button>
+                    <button id="resetBtn">Nulla (0°)</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <p class="hint">
+        Tipp: a szervó **pozícióra áll**, nem folyamatosan forog. Az A gomb balra, a B gomb jobbra lépteti a kart a
+        beállított lépésközzel.
+    </p>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
