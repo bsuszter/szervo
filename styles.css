@@ -25,16 +25,19 @@ h1 {
     margin: 0 0 24px;
 }
 
+
+
 .panel {
-    max-width: 760px;
+    max-width: 500px;       /* Moodle szélességéhez igazítva */
     margin: 0 auto;
     background: var(--panel);
     border-radius: 16px;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
     padding: 24px;
-    display: grid;
+    display: flex;
     grid-template-columns: 1fr 1fr;
     gap: 24px;
+    align-items: flex-start;
 }
 
 .servo {
@@ -47,6 +50,20 @@ h1 {
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    flex: 1 1 250px;
+    /* rugalmas, de minimum 250px */
+    height: 200px;
+}
+
+/* vezérlők */
+.controls {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1 1 200px;
+    /* rugalmas, de minimum 200px */
+    align-items: center;
+    gap: 10px;
 }
 
 /* skála jelölések */
@@ -74,26 +91,22 @@ h1 {
 
 /* szervókar */
 .arm {
-  position: absolute;
-  top: 48%;
-  left: 170px;           /* igazítsd, hogy pont a pivot után kezdődjön */
-  width: 80px;
-  height: 12px;
-  background: #1976d2;
-  border-radius: 6px;
-  transform-origin: left center;  /* <-- fontos */
-  transform: rotate(0deg);
-  transition: transform 0.3s ease;
+    position: absolute;
+    top: 48%;
+    left: 120px;
+    /* igazítsd, hogy pont a pivot után kezdődjön */
+    width: 80px;
+    height: 12px;
+    background: #1976d2;
+    border-radius: 6px;
+    transform-origin: left center;
+    /* <-- fontos */
+    transform: rotate(0deg);
+    transition: transform 0.3s ease;
 }
 
 
-/* vezérlők */
-.controls {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    justify-content: center;
-}
+
 
 .buttons {
     display: flex;
@@ -155,7 +168,7 @@ h1 {
 }
 
 input[type="range"] {
-    width: 200px;
+    width: 50px;
 }
 
 .extras {
